@@ -57,6 +57,7 @@ double pmvnorm(int* n,
  */
 double pmvnorm_P(int n,
                  double* bound,
+				 double* mean,
                  double* correlationMatrix, // (2,1), (3,1), (3,2) .....
                  double* error)
 {
@@ -73,7 +74,7 @@ double pmvnorm_P(int n,
   for (i = 0; i < n; ++i) {
     infin[i] = 0; // (-inf, bound]
     lower[i] = 0.0;
-    delta[i] = 0.0;
+    delta[i] = mean[i];
   }
 
   // return values
@@ -93,6 +94,7 @@ double pmvnorm_P(int n,
  */
 double pmvnorm_Q(int n,
                  double* bound,
+				 double* mean,
                  double* correlationMatrix, // (2,1), (3,1), (3,2) .....
                  double* error)
 {
@@ -110,7 +112,7 @@ double pmvnorm_Q(int n,
   for (i = 0; i < n; ++i) {
     infin[i] = 1; // (-inf, bound]
     upper[i] = 0.0;
-    delta[i] = 0.0;
+    delta[i] = mean[i];
   }
 
   // return values

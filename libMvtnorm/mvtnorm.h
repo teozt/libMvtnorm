@@ -43,10 +43,12 @@ double pmvnorm(int* n,
 
 double pmvnorm_P(int n,
                  double* bound,
+				 double* mean,
                  double* correlationMatrix, // (2,1), (3,1), (3,2) .....
                  double* error);
 double pmvnorm_Q(int n,
                  double* bound,
+				 double* mean,
                  double* correlationMatrix, // (2,1), (3,1), (3,2) .....
                  double* error);
 
